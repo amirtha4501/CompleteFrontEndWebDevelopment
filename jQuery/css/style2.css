@@ -1,0 +1,39 @@
+#main-header {
+    display: inline-block;
+}
+
+.nav {
+    border-bottom: 2px solid black;
+}
+
+.profile-menu {
+    list-style: none;
+    float: right;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+.profile-menu-trigger  {
+    text-decoration: none;
+}
+
+.profile-submenu {
+    background-color: white;
+    box-shadow: 2px 2px 15px grey;
+    list-style: none;
+    color: black;
+    padding: 15px;
+    width: 300px;
+    margin-top: 20px;
+    display: none;
+    position: absolute;
+}
+
+.active {
+    display: block;
+}
+
+.profile-submenu a {
+    padding: 7px;
+    text-decoration: none;
+}
