@@ -1,5 +1,42 @@
 $(document).ready(function() {
 
+    var s = new gquery("my-selector");
+
+    console.log($('.submenu a').first().text()); // Accessing first element in list a
+    console.log($('.submenu a').last().text()); // Accessing last element in list a
+
+    $('textarea').focusin(function() {
+        console.log("Focussed in on the textarea");
+    });
+    $('textarea').focusout(function() {
+        console.log("Focussed out on the textarea");
+    })
+
+    $('p:contains("first")').append(" This has the 'first' word in it. Surprisingly it still does!");
+
+    if ($(':contains("second")').is('div')) {
+        console.log("The word is in the paragraph");
+    }
+
+    $('p').each(function() {
+        console.log($(this).text());
+    })
+
+    window.passed = 0;
+    $('input[name=email]').on('keyup', function() {
+
+        if($(this).val().indexOf('@') > -1) {
+            passed++;
+            if($(this).val().indexOf('.') > -1) {
+                passed++;
+            }
+        }
+    })
+
+
+    gQuery(".my-selector").addClass("MYNEWCLASS");
+    gQuery("#main").addClass("MYNEWCLASS");
+
     $('[href="https://www.google.com/"]').on('click', function (event) {
         console.log("Linking to google?");
         event.preventDefault();
@@ -64,6 +101,16 @@ $(document).ready(function() {
         }
 
     });
+
+    function printThis(el) {
+        if($(this).text()) {
+            console.log($(this).text());
+        }
+        else {
+            console.log($(this).val());
+        }
+    }
+    $('input').focusin(printThis); // call back function
 
 
 });
